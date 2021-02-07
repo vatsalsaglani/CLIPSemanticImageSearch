@@ -52,7 +52,7 @@ def linkToImage(link):
     img = Image.open(content)
     return img
 
-@st.cache
+@st.cache(show_spinner=False)
 def getImageTextSimScore(link, text):
     image = preprocess(linkToImage(link)).unsqueeze(0).to(device)
     tokenizedText = clip.tokenize(text).to(device)
@@ -65,7 +65,7 @@ def getImageTextSimScore(link, text):
     return simScore.item()
 
 
-@st.cache
+@st.cache(show_spinner=False)
 def getSortedQuery(text):
 
     upSplashImages = getImagesFromUnsplash(10, text)
