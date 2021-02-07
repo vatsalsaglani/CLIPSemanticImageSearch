@@ -54,6 +54,10 @@ def linkToImage(link):
 
 @st.cache(show_spinner=False)
 def getImageTextSimScore(link, text):
+    '''
+    Compute similarity score from image feature
+    and text feature
+    '''
     image = preprocess(linkToImage(link)).unsqueeze(0).to(device)
     tokenizedText = clip.tokenize(text).to(device)
     with torch.no_grad():
@@ -67,6 +71,10 @@ def getImageTextSimScore(link, text):
 
 @st.cache(show_spinner=False)
 def getSortedQuery(text):
+    '''
+    Get images from text and sort
+    using similarity score
+    '''
 
     upSplashImages = getImagesFromUnsplash(10, text)
     

@@ -21,14 +21,14 @@ if imageText:
         simScore = [f'Sim Score: {score:.2f}' for img, score in imgSimScore]
 
         upSplashImages = [linkToImage(img) for img in upSplashImages]
-        upSplashIx = [i for i in range(len(upSplashImages))]
+        upSplashIx = [i+1 for i in range(len(upSplashImages))]
 
         col1, col2 = st.beta_columns(2)
 
         col1.header("Semantic Search")
-        col1.image(images, width = 100, caption = simScore)
+        col1.image(images, width = 300, caption = simScore)
 
         col2.header("Images from Unsplash")
-        col2.image(upSplashImages, width = 100, caption = upSplashIx)
+        col2.image(upSplashImages, width = 300, caption = upSplashIx)
 
         
