@@ -28,7 +28,7 @@ if imageText:
         col1.header("Semantic Search")
         col1.image(images, width = 100, caption = simScore)
 
-        col2.header("Images from Upsplash")
+        col2.header("Images from Unsplash")
         col2.image(upSplashImages, width = 100, caption = upSplashIx)
 
         
