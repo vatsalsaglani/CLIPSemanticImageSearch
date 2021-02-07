@@ -13,7 +13,7 @@ imageText = st.text_input("Search Image")
 
 
 if imageText:
-    with st.spinner(text = 'Getting Images from upsplash and sorting with clip ...'):
+    with st.spinner(text = 'Getting Images from Unsplash and sorting with clip ...'):
         
         imgSimScore, upSplashImages = getSortedQuery(imageText)
 
